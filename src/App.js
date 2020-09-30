@@ -7,7 +7,7 @@ function App() {
   const [todos,SetTodos] = useState([])
 
   const addTodo = () => {
-    console.log('text is : ',text)
+    
     SetTodos([...todos,text])
   }
   return (
