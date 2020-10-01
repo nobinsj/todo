@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
+
 import './App.css';
+
+
 
 function App() {
   const [text,setText] = useState('')
@@ -9,6 +12,7 @@ function App() {
   const addTodo = () => {
     
     SetTodos([...todos,text])
+    
   }
   return (
   <div>
@@ -16,13 +20,13 @@ function App() {
     
     Enter  :  <input type="text" id="text" onChange={event => setText(event.target.value)} />
     <button type="submit" onClick={addTodo}> Add Todo</button>
-
-    <p>{text}</p>
+    <p>{text}</p>   
     <ul>
       {todos.map((el) => {
         return (<li> {el} </li>)
       })}
     </ul>
+
     </div>  
   );
 }
