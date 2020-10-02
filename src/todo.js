@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import './App.css';
+
 
 class Todo extends Component{
     constructor(props){
@@ -7,23 +9,24 @@ class Todo extends Component{
         this.state = {
           items :  [],
           Incontent : ""
-
+          
         }
     }
 
     textName = (e) => {
         
         this.setState({Incontent:e.target.value})
+        
     }
 
-
+ 
     addItem = (e)=>{
         
         const currTxt =this.state.Incontent;
         const currItems = this.state.items;
         currItems.push(currTxt)
         this.setState({items:currItems})
-
+       
     }
 
     removeItem = (k)=>{
@@ -34,21 +37,22 @@ class Todo extends Component{
         currItems.splice(k,1);
         this.setState({items:currItems})
     }
+   
     
     render() {
         return (
 
             <div className="Con">
-                <h1>TODO</h1>
+                <h3>TODO</h3>
                 <input type="text" onChange={this.textName} />
                 <button onClick={this.addItem}>Add</button>
-                <h4>{this.state.Incontent}</h4>
+                <p>{this.state.Incontent}</p>
                 <br /><br />
-                <table  border="1">
-                   
+                <table>                   
                     {this.state.items.map((itm,k) =>{
                         return(
-                            <tr><td>{itm}</td><td><button onClick={ ()=>{this.removeItem(k)}}>Delete</button></td></tr>
+                        <tr><th>{itm } </th>                                   
+                        <td><button onClick={ ()=>{this.removeItem(k)}}>  Delete</button></td></tr>
                         )
                     })}
                 </table>

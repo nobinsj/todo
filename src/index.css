@@ -18,12 +18,18 @@ code {
 }
 
 table {
- 
-  text-align: center;
-  width: 10%;
+  border-collapse: collapse;
+  width: 30%;
 }
 
-th, td {
-  height: 40px;
-  
+td,th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
+
+
+
+
+
+
