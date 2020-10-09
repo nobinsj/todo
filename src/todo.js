@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
+import Button from 'react-bootstrap/Button';
 
 import './App.css';
 
@@ -41,21 +43,33 @@ class Todo extends Component{
     
     render() {
         return (
-
+            <div>
+                <Navbar dark color="primary">
+                    <div className="container">
+                        <NavbarBrand href="/">TODO</NavbarBrand>
+                    </div>
+                </Navbar>
             <div className="Con">
-                <h3>TODO</h3>
+                {/* <div className=""></div> */}
+                
                 <input type="text" onChange={this.textName} />
-                <button onClick={this.addItem}>Add</button>
+                <Button variant="primary" size="sm" onClick={this.addItem}>Add</Button>
                 <p>{this.state.Incontent}</p>
                 <br /><br />
                 <table>                   
                     {this.state.items.map((itm,k) =>{
                         return(
-                        <tr><th>{itm } </th>                                   
-                        <td><button onClick={ ()=>{this.removeItem(k)}}>  Delete</button></td></tr>
+                        <tr><th>{itm } </th>                                       
+                            <td><select name="status">
+                                <option value="Like to be done">Like to be done</option>
+                                <option value="Going">Going</option>
+                                <option value="Done">Done</option>                                     
+                            </select></td>
+                        <td><Button variant="danger" onClick={ ()=>{this.removeItem(k)}}>  Delete</Button></td></tr>
                         )
                     })}
-                </table>
+                </table> 
+            </div>
             </div>
         );
     }
