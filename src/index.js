@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import './index.css';
 import App from './App';
-import Todo from './todo';
+// import Todo from './todo';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Todo />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

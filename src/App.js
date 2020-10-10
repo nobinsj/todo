@@ -1,34 +1,26 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
-
+import React from 'react';
 import './App.css';
+import TodoApp from './todos';
 
 
 
 function App() {
-  const [text,setText] = useState('')
-  const [todos,SetTodos] = useState([])
-
-  const addTodo = () => {
-    
-    SetTodos([...todos,text])
-    
-  }
   return (
-  <div>
-     <h1>TODO</h1>
-    
-    Enter  :  <input type="text" id="text" onChange={event => setText(event.target.value)} />
-    <button type="submit" onClick={addTodo}> Add Todo</button>
-    <p>{text}</p>   
-    <ul>
-      {todos.map((el) => {
-        return (<li> {el} </li>)
-      })}
-    </ul>
-
-    </div>  
+    <div className="container">
+      <div className=" row-content">
+        <div className="offset-sm-2 col-sm-8">
+          <div className="card"> 
+            <h3 className="card-header bg-primary text-white">TODO</h3>
+              <div className="card-body">
+                <TodoApp />
+              </div>
+          </div>
+        </div>
+      </div>  
+    </div>
   );
 }
 
 export default App;
+
+
