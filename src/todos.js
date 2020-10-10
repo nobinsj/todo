@@ -8,7 +8,7 @@ function Todo ({text,complete,deleteTodo,completeTodo}) {
         <dl className="col-sm-1">
             <input type="checkbox" onChange={completeTodo}/>
         </dl>     
-        <dl className="col-sm-8" style={{textDecoration: complete ? "line-through" : ""}}>
+        <dl className="col-sm-6" style={{textDecoration: complete ? "line-through" : ""}}>
             {text}
         </dl>
         <dd className="offset-sm-1 col-sm-1">
